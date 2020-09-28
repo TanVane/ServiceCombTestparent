@@ -1,0 +1,16 @@
+APPLICATION_ID: edge
+service_description:
+  name: provider
+  version: 0.0.1
+  environment: development
+servicecomb:
+  handler:
+    chain:
+      Provider:
+        default: {}
+  rest:
+    address: 0.0.0.0:9082
+  service:
+    registry:
+#      address: http://192.168.1.32:30100
+      address: http://127.0.0.1:30100
