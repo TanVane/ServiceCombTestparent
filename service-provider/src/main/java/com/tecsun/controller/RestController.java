@@ -17,4 +17,9 @@ public class RestController {
 	public String sayRest(String name) {
 		return "hello world"+name;
 	}
+
+	@GetMapping("/login")
+	public String login(String name) {
+		return "登录===="+name;
+	}
 }

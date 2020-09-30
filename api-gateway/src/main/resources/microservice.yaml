@@ -7,7 +7,11 @@ servicecomb:
   handler:
     chain:
       Consumer:
-        default: {}
+        default: auth,loadbalance  #默认处理链（按顺序执行）
+        service:
+            authentication-server: loadbalance #指定服务处理链
+      Provider:
+        default: qps-flowcontrol-provider
   service:
     registry:
       address: http://127.0.0.1:30100
