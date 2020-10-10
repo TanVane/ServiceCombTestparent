@@ -16,6 +16,6 @@ public class RestCustomImpl implements RestService {
 	@Override
 	public String sayRest(String name) {
 		String providename="provider";
-		return restTemplate.getForObject("cse://" + providename +"/hello/hello", String.class);
+		return restTemplate.getForObject("cse://" + providename +"/hello/hello?name="+name,String.class);
 	}
 }

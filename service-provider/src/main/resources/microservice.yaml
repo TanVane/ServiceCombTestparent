@@ -1,4 +1,4 @@
-APPLICATION_ID: edge
+APPLICATION_ID: start.servciceComb.io
 service_description:
   name: provider
   version: 0.0.1

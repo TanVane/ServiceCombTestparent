@@ -1,13 +1,14 @@
 APPLICATION_ID: start.servciceComb.io
 service_description:
   name: consumer
-  version: 0.0.2
+  version: 0.0.1
   environment: development
 servicecomb:
   handler:
     chain:
-      Provider: {}
-            
+      Provider:
+        default: {}
+
             
   rest:
     address: 0.0.0.0:9090
@@ -15,4 +16,3 @@ servicecomb:
     registry:
 #      address: http://192.168.1.32:30100
       address: http://127.0.0.1:30100
-      autodiscovery: false

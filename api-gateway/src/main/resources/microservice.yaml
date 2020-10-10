@@ -1,27 +1,25 @@
-APPLICATION_ID: edge
+APPLICATION_ID: start.servciceComb.io #服务id 类似于组 服务内调用
 service_description:
-  name: edge
-  version: 0.0.1
-  environment: development
+  name: edge #注册到服务中心的名称
+  version: 0.0.1  #版本号
+  environment: development  #环境配置
 servicecomb:
   handler:
     chain:
       Consumer:
         default: auth,loadbalance  #默认处理链（按顺序执行）
         service:
-            authentication-server: loadbalance #指定服务处理链
-      Provider:
-        default: qps-flowcontrol-provider
+          consumer: loadbalance #指定服务处理链(服务名称)
   service:
     registry:
-      address: http://127.0.0.1:30100
+      address: http://127.0.0.1:30100  #注册中心地址
   rest:
-    address: 0.0.0.0:18080
+    address: 0.0.0.0:18080   #rest通信地址 不同服务需要修改端口
   http:
     dispatcher:
       edge:
         default:
-          enabled: true
-          prefix: api
-          withVersion: false
-          prefixSegmentCount: 1
+          enabled: true  #是否开启
+          prefix: api  #调用前缀
+          withVersion: false #版本号
+          prefixSegmentCount: 1  #前缀数（具体参考文档）
